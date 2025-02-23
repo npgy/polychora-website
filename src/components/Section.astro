@@ -1,0 +1,30 @@
+---
+const { id: idName, class: className = "" } = Astro.props;
+---
+
+<style>
+  .section {
+    padding: 2rem 2rem 5rem 2rem;
+    margin: 2rem 0;
+    border: 7px solid var(--text);
+    border-radius: 40px;
+  }
+
+  :global(.section h2) {
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    :global(.section h2) {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<section id={idName} class:list={["section", className]}>
+  <slot />
+</section>

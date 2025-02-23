@@ -1,343 +1,151 @@
 ---
-
+import "../styles/global.css";
+import Section from "../components/Section.astro";
+import Main from "../components/Main.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polychora Records & Fulfillment</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <style is:global>
-      @font-face {
-        font-family: "Poppins-Regular";
-        font-weight: 400;
-        font-stretch: normal;
-        src:
-          url("/fonts/Poppins-Regular.woff") format("woff"),
-          url("/fonts/Poppins-Regular.ttf") format("truetype");
-      }
+<style>
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
 
-      @font-face {
-        font-family: "Poppins-SemiBold";
-        font-weight: 600;
-        font-stretch: normal;
-        src:
-          url("/fonts/Poppins-SemiBold.woff") format("woff"),
-          url("/fonts/Poppins-SemiBold.ttf") format("truetype");
-      }
+  .service {
+    background-color: var(--secondary);
+    color: var(--background);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
 
-      @font-face {
-        font-family: "Poppins-Bold";
-        font-weight: 700;
-        font-stretch: normal;
-        src:
-          url("/fonts/Poppins-Bold.woff") format("woff"),
-          url("/fonts/Poppins-Bold.ttf") format("truetype");
-      }
+  .service:hover {
+    transform: translateY(-10px);
+  }
 
-      :root {
-        --primary: #ffd753;
-        --secondary: #f97133;
-        /* --accent: #ffd753; */
-        --accent: #ffdf9e;
-        --tertiary: #ff5694;
-        --background: #1a1a1a;
-        --text: #ebebeb;
-      }
+  .artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+  .artist {
+    background-color: var(--primary);
+    color: var(--background);
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+  }
 
-      body {
-        font-family: "Poppins-Regular", sans-serif;
-        background-color: var(--background);
-        color: var(--text);
-        line-height: 1.6;
-      }
+  .artist:hover {
+    transform: rotate(3deg);
+  }
 
-      .container {
-        width: 90%;
-        margin: auto;
-        overflow: hidden;
-      }
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
-      header {
-        background-color: var(--primary);
-        padding: 1rem;
-        text-align: center;
-      }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary);
+    border-radius: 11px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-weight: 600;
+  }
 
-      header h1 {
-        font-family: "Poppins-Bold";
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: var(--background);
-        letter-spacing: 3px;
-      }
+  .contact-form button {
+    background-color: var(--accent);
+    color: var(--background);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-      nav {
-        font-family: "Poppins-SemiBold", sans-serif;
-        font-weight: 600;
-        background-color: var(--secondary);
-        padding: 1rem;
-      }
+  .contact-form button:hover {
+    background-color: var(--primary);
+  }
+</style>
+<MainLayout>
+  <Main>
+    <Section id="about">
+      <h2>About Us</h2>
+      <p>
+        Polychora Records is not just a label, it's a multidimensional
+        experience. We're here to push boundaries, break rules, and ship vinyl
+        to the far corners of the universe. Founded in 2025, we've been bending
+        soundwaves and packing boxes with equal passion ever since.
+      </p>
+    </Section>
 
-      nav ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      nav ul li {
-        margin: 0 1rem;
-      }
-
-      nav ul li a {
-        color: var(--background);
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2rem;
-        transition: color 0.3s ease;
-      }
-
-      nav ul li a:hover {
-        color: var(--accent);
-      }
-
-      .hero {
-        background-color: var(--tertiary);
-        color: var(--background);
-        padding: 2rem 2rem;
-        text-align: center;
-      }
-
-      .hero h2 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero p {
-        font-size: 1.4rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .section {
-        padding: 2rem 2rem 5rem 2rem;
-        margin: 2rem 0;
-        border: 7px solid var(--text);
-        border-radius: 40px;
-      }
-
-      .section h2 {
-        font-family: "Poppins-SemiBold", sans-serif;
-        font-weight: 600;
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: var(--text);
-      }
-
-      .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-      }
-
-      .service {
-        background-color: var(--secondary);
-        color: var(--background);
-        padding: 2rem;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-
-      .service:hover {
-        transform: translateY(-10px);
-      }
-
-      .artists {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      .artist {
-        background-color: var(--primary);
-        color: var(--background);
-        padding: 1rem;
-        width: 200px;
-        text-align: center;
-        transform: rotate(-3deg);
-        transition: transform 0.3s ease;
-      }
-
-      .artist:hover {
-        transform: rotate(3deg);
-      }
-
-      .contact-form {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border: 3px solid var(--secondary);
-        border-radius: 11px;
-        background-color: var(--background);
-        color: var(--text);
-        font-family: "Poppins-SemiBold", sans-serif;
-        font-weight: 600;
-      }
-
-      .contact-form button {
-        background-color: var(--accent);
-        color: var(--background);
-        border: none;
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .contact-form button:hover {
-        background-color: var(--primary);
-      }
-
-      footer {
-        font-family: "Poppins-Regular", sans-serif;
-        background-color: var(--primary);
-        color: var(--background);
-        text-align: center;
-        padding: 2rem;
-        margin-top: 2rem;
-      }
-
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2rem;
-        }
-
-        .hero h2 {
-          font-size: 2.5rem;
-        }
-
-        .hero p {
-          font-size: 1.2rem;
-        }
-
-        .section h2 {
-          font-size: 2rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>polychora.</h1>
-    </header>
-
-    <nav>
-      <ul>
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#services">services</a></li>
-        <li><a href="#artists">artists</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
-    </nav>
-
-    <section id="home" class="hero">
-      <p>believing in unique artists.</p>
-      <p>unfettered flows of creativity can be found here.</p>
-    </section>
-
-    <main class="container">
-      <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>
-          Polychora Records is not just a label, it's a multidimensional
-          experience. We're here to push boundaries, break rules, and ship vinyl
-          to the far corners of the universe. Founded in 2025, we've been
-          bending soundwaves and packing boxes with equal passion ever since.
-        </p>
-      </section>
-
-      <section id="services" class="section">
-        <h2>Our Services</h2>
-        <div class="services">
-          <div class="service">
-            <h3>Record Label</h3>
-            <p>
-              We don't just sign artists, we adopt them into our weird and
-              wonderful family.
-            </p>
-          </div>
-          <div class="service">
-            <h3>Fulfillment</h3>
-            <p>
-              We pack and ship with the precision of a drum machine and the care
-              of a vinyl collector.
-            </p>
-          </div>
-          <div class="service">
-            <h3>Distribution</h3>
-            <p>
-              We'll get your music to places you didn't even know existed.
-              Alternate dimensions included.
-            </p>
-          </div>
+    <Section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Record Label</h3>
+          <p>
+            We don't just sign artists, we adopt them into our weird and
+            wonderful family.
+          </p>
         </div>
-      </section>
-
-      <section id="artists" class="section">
-        <h2>Our Artists</h2>
-        <div class="artists">
-          <div class="artist">
-            <h3>Quantum Quokkas</h3>
-            <p>Psychedelic Surf Rock</p>
-          </div>
-          <div class="artist">
-            <h3>Neon Narwhals</h3>
-            <p>Synthwave</p>
-          </div>
-          <div class="artist">
-            <h3>Fractal Flamingos</h3>
-            <p>Math Rock</p>
-          </div>
-          <div class="artist">
-            <h3>Holographic Hedgehogs</h3>
-            <p>Glitch Hop</p>
-          </div>
+        <div class="service">
+          <h3>Fulfillment</h3>
+          <p>
+            We pack and ship with the precision of a drum machine and the care
+            of a vinyl collector.
+          </p>
         </div>
-      </section>
+        <div class="service">
+          <h3>Distribution</h3>
+          <p>
+            We'll get your music to places you didn't even know existed.
+            Alternate dimensions included.
+          </p>
+        </div>
+      </div>
+    </Section>
 
-      <section id="contact" class="section">
-        <h2>Get in Touch</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send It!</button>
-        </form>
-      </section>
-    </main>
+    <Section id="artists">
+      <h2>Our Artists</h2>
+      <div class="artists">
+        <div class="artist">
+          <h3>Quantum Quokkas</h3>
+          <p>Psychedelic Surf Rock</p>
+        </div>
+        <div class="artist">
+          <h3>Neon Narwhals</h3>
+          <p>Synthwave</p>
+        </div>
+        <div class="artist">
+          <h3>Fractal Flamingos</h3>
+          <p>Math Rock</p>
+        </div>
+        <div class="artist">
+          <h3>Holographic Hedgehogs</h3>
+          <p>Glitch Hop</p>
+        </div>
+      </div>
+    </Section>
 
-    <footer>
-      <p>&copy; 2025 Polychora LLC. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+    <Section id="contact">
+      <h2>Get in Touch</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send It!</button>
+      </form>
+    </Section>
+  </Main>
+</MainLayout>

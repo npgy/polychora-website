@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,4 +13,7 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
   integrations: [compress(), sitemap()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
