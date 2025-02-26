@@ -3,6 +3,10 @@ import "../styles/global.css";
 import Section from "../components/Section.astro";
 import Main from "../components/Main.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import fl from "../assets/fl.jpg";
+import prot from "../assets/prot.jpg";
+import rc from "../assets/davz.jpg";
 ---
 
 <style>
@@ -79,14 +83,67 @@ import MainLayout from "../layouts/MainLayout.astro";
 </style>
 <MainLayout>
   <Main>
-    <Section id="about">
-      <h2>About Us</h2>
-      <p>
-        Polychora Records is not just a label, it's a multidimensional
-        experience. We're here to push boundaries, break rules, and ship vinyl
-        to the far corners of the universe. Founded in 2025, we've been bending
-        soundwaves and packing boxes with equal passion ever since.
-      </p>
+    <Section id="latest-release">
+      <h2>Latest Releases</h2>
+      <div class="latest flex flex-row gap-8 flex-wrap justify-around">
+        <a
+          href="https://electronicvisions.bandcamp.com/album/forest-language-3"
+          target="_blank"
+          class="shrink-0"
+        >
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-xl"
+              alt="fl"
+              src={fl}
+            />
+            <div class="flex flex-col gap-1 items-center">
+              <span class="text-2xl">Forest Language</span>
+              <span class="text-xl">Electronic Visions</span>
+            </div>
+          </div>
+        </a>
+        <a
+          href="https://polychorarecs.bandcamp.com/album/protocol"
+          target="_blank"
+          class="shrink-0"
+        >
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-xl"
+              alt="fl"
+              src={prot}
+            />
+            <div class="flex flex-col gap-1 items-center">
+              <span class="text-2xl">Protocol</span>
+              <span class="text-xl">Delimitr</span>
+            </div>
+          </div>
+        </a>
+        <a
+          href="https://davz.bandcamp.com/album/radio-continental"
+          target="_blank"
+          class="shrink-0"
+        >
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-xl"
+              alt="fl"
+              src={rc}
+            />
+            <div class="flex flex-col gap-1 items-center">
+              <span class="text-2xl">Radio Continental</span>
+              <span class="text-xl">DavZ</span>
+            </div>
+          </div>
+        </a>
+      </div>
     </Section>
 
     <Section id="services">
