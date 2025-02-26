@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-@layer utilities {
-  /* Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+@theme {
+  --color-primary: #ffd753;
+  --color-secondary: #f97133;
+  /* --accent: #ffd753; */
+  --color-accent: #ffdf9e;
+  --color-tertiary: #ff5694;
+  --color-background: #1a1a1a;
+  --color-text: #ebebeb;
 }

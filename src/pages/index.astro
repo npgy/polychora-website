@@ -20,7 +20,6 @@ import demin from "../assets/demin.jpg";
   }
 
   .service {
-    background-color: var(--secondary);
     color: var(--background);
     padding: 2rem;
     text-align: center;
@@ -147,25 +146,30 @@ import demin from "../assets/demin.jpg";
     <Section id="services">
       <h2>Our Services</h2>
       <div class="services">
-        <div class="service">
-          <h3>Record Label</h3>
+        <div class="service bg-primary flex flex-col gap-2">
+          <h3 class="text-xl font-bold">Fulfillment</h3>
           <p>
-            We don't just sign artists, we adopt them into our weird and
-            wonderful family.
+            We offer fulfillment to labels that are looking to offload their
+            inventory, utilizing warehouses in both the US and the EU.
           </p>
         </div>
-        <div class="service">
-          <h3>Fulfillment</h3>
+        <div class="service bg-secondary flex flex-col gap-2">
+          <h3 class="text-xl font-bold">Vinyl & Cassette Pressing</h3>
           <p>
-            We pack and ship with the precision of a drum machine and the care
-            of a vinyl collector.
+            Want to hear your music on a physical format? We will press your
+            record onto vinyl or cassette with many options for customization.
           </p>
         </div>
-        <div class="service">
-          <h3>Distribution</h3>
+
+        <div class="service bg-tertiary flex flex-col gap-2">
+          <h3 class="text-xl font-bold">Digital Distribution</h3>
           <p>
-            We'll get your music to places you didn't even know existed.
-            Alternate dimensions included.
+            We recommend <a
+              href="https://www.and.fm"
+              target="_blank"
+              class="hover:text-gray-500 text-gray-700">and.fm</a
+            >
+            if you're looking for digital distribution :)
           </p>
         </div>
       </div>
