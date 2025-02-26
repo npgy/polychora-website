@@ -7,6 +7,9 @@ import { Image } from "astro:assets";
 import fl from "../assets/fl.jpg";
 import prot from "../assets/prot.jpg";
 import rc from "../assets/davz.jpg";
+import ev from "../assets/ev.jpg";
+import davz from "../assets/davz-pfp.jpg";
+import demin from "../assets/demin.jpg";
 ---
 
 <style>
@@ -36,11 +39,6 @@ import rc from "../assets/davz.jpg";
   }
 
   .artist {
-    background-color: var(--primary);
-    color: var(--background);
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
     transform: rotate(-3deg);
     transition: transform 0.3s ease;
   }
@@ -176,33 +174,47 @@ import rc from "../assets/davz.jpg";
     <Section id="artists">
       <h2>Our Artists</h2>
       <div class="artists">
-        <div class="artist">
-          <h3>Quantum Quokkas</h3>
-          <p>Psychedelic Surf Rock</p>
-        </div>
-        <div class="artist">
-          <h3>Neon Narwhals</h3>
-          <p>Synthwave</p>
-        </div>
-        <div class="artist">
-          <h3>Fractal Flamingos</h3>
-          <p>Math Rock</p>
-        </div>
-        <div class="artist">
-          <h3>Holographic Hedgehogs</h3>
-          <p>Glitch Hop</p>
-        </div>
+        <a
+          href="https://www.electronicvisionsmusic.com/"
+          target="_blank"
+          class="shrink-0"
+        >
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-full"
+              alt="fl"
+              src={ev}
+            />
+            <span class="text-2xl">Electronic Visions</span>
+          </div>
+        </a>
+        <a href="https://davz.com/" target="_blank" class="shrink-0">
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-full"
+              alt="fl"
+              src={davz}
+            />
+            <span class="text-2xl">DavZ</span>
+          </div>
+        </a>
+        <a href="https://demin.bandcamp.com/" target="_blank" class="shrink-0">
+          <div class="flex flex-col gap-4 items-center">
+            <Image
+              width="400"
+              height="400"
+              class="w-56 h-56 rounded-full"
+              alt="fl"
+              src={demin}
+            />
+            <span class="text-2xl">demin</span>
+          </div>
+        </a>
       </div>
-    </Section>
-
-    <Section id="contact">
-      <h2>Get in Touch</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send It!</button>
-      </form>
     </Section>
   </Main>
 </MainLayout>
