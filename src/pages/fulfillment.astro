@@ -1,0 +1,53 @@
+---
+import CircleCheck from "../components/icons/CircleCheck.astro";
+import Main from "../components/Main.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  pageTitle="Fulfillment"
+  pageDescription="Our global fulfillment services for labels and artists"
+>
+  <Main>
+    <div class="py-8 pt-16">
+      <div class="flex justify-center">
+        <h1 class="text-6xl font-bold w-sm text-center">
+          Simplify Your Fulfillment Operations.
+        </h1>
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-8 justify-center py-8">
+      <div class="flex flex-col border-4 w-[24rem]">
+        <div class="flex flex-col gap-8 p-8">
+          <h2 class="text-2xl font-bold self-center">Physical Fulfillment</h2>
+          <h3
+            class="text-2xl font-bold bg-tertiary p-2 text-black flex justify-center w-1/2 self-center"
+          >
+            $35/mo
+          </h3>
+          <button class="bg-white text-black p-2 font-bold">Get Started</button>
+        </div>
+        <div class="p-8 bg-lighterbg">
+          <ul class="flex flex-col gap-2">
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> Fulfillment of Vinyl, Cassette
+            </li>
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> Support response within 24h
+            </li>
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> No unreasonable limits on orders*
+            </li>
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> Cheaper shipping for global customers
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-sm">
+        *We reserve the right to limit orders or terminate your plan if we're
+        unable to handle your capacity.
+      </p>
+    </div>
+  </Main>
+</MainLayout>

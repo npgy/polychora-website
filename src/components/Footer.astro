@@ -1,5 +1,54 @@
-<footer>
-  <p>&copy; 2025 Polychora LLC. All rights reserved.</p>
+---
+import Socials from "./Socials.astro";
+---
+
+<footer class="bg-black text-white p-8">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="space-y-4">
+      <h2 class="text-4xl font-bold">polychora.</h2>
+      <!-- <p class="text-sm">we're building a better music business</p> -->
+      <Socials />
+    </div>
+    <div>
+      <h3 class="font-bold mb-4">Label</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="https://polychorarecs.bandcamp.com/music"
+            target="_blank"
+            class="text-sm hover:text-blue-900">Music</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-bold mb-4">Resources</h3>
+      <ul class="space-y-2">
+        <li>
+          <a
+            href="https://www.and.fm/"
+            class="text-sm hover:text-blue-900"
+            target="_blank">and.fm Distribution</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-bold mb-4">Company</h3>
+      <ul class="space-y-2">
+        <li>
+          <a href="/privacy-policy" class="text-sm hover:text-blue-900"
+            >Privacy Policy</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-sm container mx-auto mt-8 pt-8 border-t border-black">
+    <p>
+      &copy; {new Date().getFullYear()} Polychora LLC. All rights reserved.
+    </p>
+  </div>
 </footer>
 
 <style>
@@ -7,8 +56,8 @@
     font-family: "Poppins-Regular", sans-serif;
     background-color: var(--primary);
     color: var(--background);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
+    /* text-align: center; */
+    /* padding: 2rem; */
+    /* margin-top: 2rem; */
   }
 </style>

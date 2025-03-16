@@ -1,6 +1,22 @@
 ---
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import Socials from "../components/Socials.astro";
+
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  class?: string;
+}
+
+const {
+  pageTitle,
+  pageDescription,
+  class: className = "",
+}: Props = Astro.props;
+
+const siteTitle = "Polychora";
+const title = pageTitle === "Home" ? siteTitle : `${pageTitle} | ${siteTitle}`;
 ---
 
 <!doctype html>
@@ -8,8 +24,11 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polychora Records & Fulfillment</title>
+    <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="description" content={pageDescription} />
+
     <style is:global>
       @font-face {
         font-family: "Poppins-Regular";
@@ -94,7 +113,7 @@ import Footer from "../components/Footer.astro";
         transition: color 0.3s ease;
       }
 
-      nav ul li a:hover {
+      .nav-item:hover {
         color: var(--accent);
       }
 
@@ -119,7 +138,7 @@ import Footer from "../components/Footer.astro";
 
       @media (max-width: 768px) {
         header h1 {
-          font-size: 2rem;
+          font-size: 2.5rem;
         }
 
         .hero h2 {
@@ -133,24 +152,43 @@ import Footer from "../components/Footer.astro";
     </style>
   </head>
   <body>
-    <header>
-      <h1>polychora.</h1>
-    </header>
+    <div class="flex flex-col justify-between min-h-screen">
+      <div>
+        <header class="flex flex-col gap-2">
+          <h1><a href="/">polychora.</a></h1>
+          <div class="text-black flex justify-center">
+            <Socials adjustSize={true} />
+          </div>
+        </header>
 
-    <nav>
-      <ul>
-        <li><a href="#home">home</a></li>
-        <li><a href="#services">services</a></li>
-        <li><a href="#artists">artists</a></li>
-      </ul>
-    </nav>
+        <nav>
+          <ul>
+            <li><a href="/" class="nav-item">home</a></li>
+            <li>
+              <a href="https://pcr.am/merch" class="nav-item" target="_blank"
+                >merch</a
+              >
+            </li>
+            <li><a href="/fulfillment" class="nav-item">fulfillment</a></li>
+            <li><a href="/contact" class="nav-item">contact</a></li>
+          </ul>
+        </nav>
+        {
+          () => {
+            if (pageTitle === "Home") {
+              return (
+                <section id="home" class="hero">
+                  <p>believing in unique artists.</p>
+                  <p>unfettered flows of creativity can be found here.</p>
+                </section>
+              );
+            }
+          }
+        }
 
-    <section id="home" class="hero">
-      <p>believing in unique artists.</p>
-      <p>unfettered flows of creativity can be found here.</p>
-    </section>
-
-    <slot />
-    <Footer />
+        <slot />
+      </div>
+      <Footer />
+    </div>
   </body>
 </html>

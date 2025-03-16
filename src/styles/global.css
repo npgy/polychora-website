@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-primary: #ffd753;
@@ -7,5 +8,6 @@
   --color-accent: #ffdf9e;
   --color-tertiary: #ff5694;
   --color-background: #1a1a1a;
+  --color-lighterbg: #2a2a2a;
   --color-text: #ebebeb;
 }

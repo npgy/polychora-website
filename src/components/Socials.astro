@@ -1,0 +1,30 @@
+---
+import Bandcamp from "./icons/Bandcamp.astro";
+import Bluesky from "./icons/Bluesky.astro";
+import Discord from "./icons/Discord.astro";
+import Instagram from "./icons/Instagram.astro";
+import Youtube from "./icons/Youtube.astro";
+
+interface Props {
+  adjustSize?: boolean;
+}
+const { adjustSize = false }: Props = Astro.props;
+---
+
+<div class="flex space-x-4">
+  <a href="https://pcr.am/bc" aria-label="Bandcamp" target="_blank"
+    ><Bandcamp {adjustSize} /></a
+  >
+  <a href="https://pcr.am/youtube" aria-label="Youtube" target="_blank"
+    ><Youtube {adjustSize} /></a
+  >
+  <a href="https://pcr.am/instagram" aria-label="Instagram" target="_blank"
+    ><Instagram {adjustSize} /></a
+  >
+  <a href="https://pcr.am/discord" aria-label="Discord" target="_blank"
+    ><Discord {adjustSize} /></a
+  >
+  <a href="https://pcr.am/bluesky" aria-label="Bluesky" target="_blank"
+    ><Bluesky {adjustSize} /></a
+  >
+</div>
