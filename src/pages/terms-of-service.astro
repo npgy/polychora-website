@@ -1,0 +1,22 @@
+---
+import Main from "../components/Main.astro";
+import Prose from "../components/Prose.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Content as TOSContent } from "../md/terms-of-service.md";
+---
+
+<MainLayout
+  pageTitle="Terms Of Service"
+  pageDescription="The terms of service for Polychora Records Fulfillment Services"
+>
+  <Main class="p-8">
+    <div class="mb-12">
+      <!-- <h1 class="mb-12 text-4xl font-extrabold">Terms of Service</h1> -->
+      <div class="flex flex-col gap-2">
+        <Prose class="prose-h2:m-0">
+          <TOSContent />
+        </Prose>
+      </div>
+    </div>
+  </Main>
+</MainLayout>

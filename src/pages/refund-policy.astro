@@ -1,0 +1,22 @@
+---
+import Main from "../components/Main.astro";
+import Prose from "../components/Prose.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Content as RefundPolicy } from "../md/refund-policy.md";
+---
+
+<MainLayout
+  pageTitle="Refund Policy"
+  pageDescription="The refund policy for Polychora Records Fulfillment Services"
+>
+  <Main class="p-8">
+    <div class="mb-12">
+      <!-- <h1 class="mb-12 text-4xl font-extrabold">Terms of Service</h1> -->
+      <div class="flex flex-col gap-2">
+        <Prose class="prose-h2:m-0">
+          <RefundPolicy />
+        </Prose>
+      </div>
+    </div>
+  </Main>
+</MainLayout>

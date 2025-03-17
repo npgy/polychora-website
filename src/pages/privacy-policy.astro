@@ -8,71 +8,67 @@ import MainLayout from "../layouts/MainLayout.astro";
   pageTitle="Privacy Policy"
   pageDescription="and.fm's Privacy Policy"
 >
-  <Main>
-    <div class="py-8">
-      <Prose>
-        <h1>Privacy Policy</h1>
-        <p class="text-sm dark:text-gray-200 text-gray-600 mt-[-1.2rem]">
-          Last Updated: 03/16/2025
-        </p>
+  <Main class="p-8">
+    <Prose>
+      <h1>Privacy Policy</h1>
+      <p class="text-sm dark:text-gray-200 text-gray-600 mt-[-1.2rem]">
+        Last Updated: 03/16/2025
+      </p>
+      <div>
         <div>
-          <div>
-            <h3>1. Data Collection</h3>
-            <p>We prioritize your privacy and minimize data collection.</p>
-            <p class="mt-[-1rem]">Our service does not collect:</p><ul
-              class="list-disc"
+          <h3>1. Data Collection</h3>
+          <p>We prioritize your privacy and minimize data collection.</p>
+          <p class="mt-[-1rem]">Our service does not collect:</p><ul
+            class="list-disc"
+          >
+            <li>Cookies or tracking</li><li>Search history</li>
+          </ul>
+          <p>Our service does collect:</p><ul class="list-disc">
+            <li>Your email address</li>
+          </ul>
+        </div><div>
+          <h3>2. External Services</h3><p>For subscription signups:</p><ul
+            class="list-disc"
+          >
+            <li>
+              The Privacy Policy of our payment processor may be different from
+              ours and apply when you sign up for a subscription.
+            </li>
+            {
+              // <li>
+              //   We recommend reviewing their privacy policy <a
+              //     href="https://revelator.com/privacy-policy"
+              //     target="_blank">here</a
+              //   >
+              // </li>
+            }
+            <li>We are not responsible for external sites' data practices</li>
+            <li>
+              We partner with and.fm to provide the software dashboards. Their <a
+                href="https://www.and.fm/privacy-policy/"
+                target="_blank">Privacy Policy</a
+              > applies when accessing the software.
+            </li>
+          </ul>
+        </div><div>
+          <h3>3. Your Privacy Rights</h3><p>
+            As we don't collect most personal data:
+          </p><ul class="list-disc">
+            <li>There is no personal data to access or delete</li><li>
+              No opt-out is necessary as we don't track users
+            </li><li>You can use our service completely anonymously</li><li>
+              No data is shared with third parties
+            </li>
+          </ul>
+          <p>When we collect your email address:</p>
+          <ul class="list-disc">
+            <li>When signing up for a physical fulfillment subscription.</li><li
             >
-              <li>Cookies or tracking</li><li>Search history</li>
-            </ul>
-            <p>Our service does collect:</p><ul class="list-disc">
-              <li>Your email address</li>
-            </ul>
-          </div><div>
-            <h3>2. External Services</h3><p>For subscription signups:</p><ul
-              class="list-disc"
-            >
-              <li>
-                The Privacy Policy of our payment processor may be different
-                from ours and apply when you sign up for a subscription.
-              </li>
-              {
-                // <li>
-                //   We recommend reviewing their privacy policy <a
-                //     href="https://revelator.com/privacy-policy"
-                //     target="_blank">here</a
-                //   >
-                // </li>
-              }
-              <li>We are not responsible for external sites' data practices</li>
-              <li>
-                We partner with and.fm to provide the software dashboards. Their <a
-                  href="https://www.and.fm/privacy-policy/"
-                  target="_blank">Privacy Policy</a
-                > applies when accessing the software.
-              </li>
-            </ul>
-          </div><div>
-            <h3>3. Your Privacy Rights</h3><p>
-              As we don't collect most personal data:
-            </p><ul class="list-disc">
-              <li>There is no personal data to access or delete</li><li>
-                No opt-out is necessary as we don't track users
-              </li><li>You can use our service completely anonymously</li><li>
-                No data is shared with third parties
-              </li>
-            </ul>
-            <p>When we collect your email address:</p>
-            <ul class="list-disc">
-              <li>
-                When signing up for a physical fulfillment subscription.
-              </li><li>
-                It is only used to contact you about your subscription
-                membership.
-              </li>
-            </ul>
-          </div>
+              It is only used to contact you about your subscription membership.
+            </li>
+          </ul>
         </div>
-      </Prose>
-    </div>
+      </div>
+    </Prose>
   </Main>
 </MainLayout>
