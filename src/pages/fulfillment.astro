@@ -8,7 +8,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   pageTitle="Fulfillment"
   pageDescription="Our global fulfillment services for labels and artists"
 >
-  <Main>
+  <Main class="px-8">
     <div class="py-8 pt-16">
       <div class="flex justify-center">
         <h1 class="text-6xl font-bold w-sm text-center">
@@ -16,7 +16,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         </h1>
       </div>
     </div>
-    <div class="flex flex-col items-center gap-8 justify-center py-8">
+    <div class="flex items-center gap-8 justify-center py-8 mb-8">
       <div class="flex flex-col border-4 w-[24rem]">
         <div class="flex flex-col gap-8 p-8">
           <h2 class="text-2xl font-bold self-center">Physical Fulfillment</h2>
@@ -44,10 +44,10 @@ import MainLayout from "../layouts/MainLayout.astro";
           </ul>
         </div>
       </div>
-      <p class="text-sm">
-        *We reserve the right to limit orders or terminate your plan if we're
-        unable to handle your capacity.
-      </p>
     </div>
+    <p class="text-sm mb-8">
+      *We reserve the right to limit orders or terminate your plan if we're
+      unable to handle your capacity.
+    </p>
   </Main>
 </MainLayout>

@@ -1,3 +1,10 @@
-<main class="container mx-auto px-8">
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" }: Props = Astro.props;
+---
+
+<main class:list={[className, "container mx-auto"]}>
   <slot />
 </main>

@@ -10,9 +10,12 @@ import rc from "../assets/davz.jpg";
 import ev from "../assets/ev.jpg";
 import davz from "../assets/davz-pfp.jpg";
 import demin from "../assets/demin.jpg";
+import clydeShelton from "../assets/clyde_shelton.jpg";
 ---
 
 <style>
+  @reference "../styles/global.css";
+
   .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -72,165 +75,182 @@ import demin from "../assets/demin.jpg";
   .contact-form button:hover {
     background-color: var(--primary);
   }
+
+  .label-release {
+    @apply w-30 h-30 md:w-56 md:h-56 rounded-xl;
+  }
+
+  .label-artist {
+    @apply w-30 h-30 md:w-56 md:h-56 rounded-full;
+  }
 </style>
 <MainLayout
   pageTitle="Home"
   pageDescription="Polychora Records & Fulfillment Services"
 >
-  <Main>
-    <Section id="latest-release">
-      <div class="flex items-center md:flex-row flex-col">
-        <h2>Latest Releases</h2>
-        <a
-          href="https://polychorarecs.bandcamp.com/music"
-          target="_blank"
-          class="underline font-bold text-xl p-2 h-8 flex flex-col justify-center items-center w-26"
-          >See All</a
-        >
-      </div>
-      <br />
-      <div class="latest flex flex-row gap-8 flex-wrap justify-around">
-        <a
-          href="https://electronicvisions.bandcamp.com/album/forest-language-3"
-          target="_blank"
-          class="shrink-0"
-        >
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-xl"
-              alt="fl"
-              src={fl}
-            />
-            <div class="flex flex-col gap-1 items-center">
-              <span class="text-2xl">Forest Language</span>
-              <span class="text-xl">Electronic Visions</span>
-            </div>
-          </div>
-        </a>
-        <a
-          href="https://polychorarecs.bandcamp.com/album/protocol"
-          target="_blank"
-          class="shrink-0"
-        >
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-xl"
-              alt="fl"
-              src={prot}
-            />
-            <div class="flex flex-col gap-1 items-center">
-              <span class="text-2xl">Protocol</span>
-              <span class="text-xl">Delimitr</span>
-            </div>
-          </div>
-        </a>
-        <a
-          href="https://davz.bandcamp.com/album/radio-continental"
-          target="_blank"
-          class="shrink-0"
-        >
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-xl"
-              alt="fl"
-              src={rc}
-            />
-            <div class="flex flex-col gap-1 items-center">
-              <span class="text-2xl">Radio Continental</span>
-              <span class="text-xl">DavZ</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </Section>
-
-    <Section id="services">
-      <h2>Our Services</h2>
-      <div class="services">
-        <div class="service bg-primary flex flex-col gap-2">
-          <h3 class="text-xl font-bold">Fulfillment</h3>
+  <Main class="px-2 md:px-8">
+    <div class="flex flex-col gap-8 py-8">
+      <Section id="latest-release" class="flex flex-col gap-6">
+        <div class="flex items-center md:flex-row flex-col">
+          <h2>Latest Releases</h2>
           <a
-            href="/fulfillment"
-            class="bg-black text-white w-36 self-center hover:bg-gray-800 h-8 justify-center flex items-center"
-            >See Our Plans</a
+            href="https://polychorarecs.bandcamp.com/music"
+            target="_blank"
+            class="underline font-bold text-xl p-2 h-8 flex flex-col justify-center items-center w-26"
+            >See All</a
           >
-          <p>
-            We offer fulfillment to labels that are looking to offload their
-            inventory, utilizing warehouses in both the US and the EU.
-          </p>
         </div>
-        <div class="service bg-secondary flex flex-col gap-2">
-          <h3 class="text-xl font-bold">Vinyl & Cassette Pressing</h3>
-          <p>
-            Want to hear your music on a physical format? We will press your
-            record onto vinyl or cassette with many options for customization.
-          </p>
+        <div class="latest flex flex-row gap-8 flex-wrap justify-around">
+          <a
+            href="https://electronicvisions.bandcamp.com/album/forest-language-3"
+            target="_blank"
+            class="shrink-0"
+          >
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-release"
+                alt="fl"
+                src={fl}
+              />
+              <div class="flex flex-col gap-1 items-center">
+                <span class="text-lg md:text-2xl">Forest Language</span>
+                <span class="text-base md:text-xl">Electronic Visions</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://polychorarecs.bandcamp.com/album/protocol"
+            target="_blank"
+            class="shrink-0"
+          >
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-release"
+                alt="fl"
+                src={prot}
+              />
+              <div class="flex flex-col gap-1 items-center">
+                <span class="text-lg md:text-2xl">Protocol</span>
+                <span class="text-base md:text-2xl">Delimitr</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://davz.bandcamp.com/album/radio-continental"
+            target="_blank"
+            class="shrink-0"
+          >
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-release"
+                alt="fl"
+                src={rc}
+              />
+              <div class="flex flex-col gap-1 items-center">
+                <span class="text-lg md:text-2xl">Radio Continental</span>
+                <span class="text-base md:text-2xl">DavZ</span>
+              </div>
+            </div>
+          </a>
         </div>
+      </Section>
 
-        <div class="service bg-tertiary flex flex-col gap-2">
-          <h3 class="text-xl font-bold">Digital Distribution</h3>
-          <p>
-            We recommend <a
-              href="https://www.and.fm"
-              target="_blank"
-              class="underline font-bold text-blue-900">and.fm</a
+      <Section id="services" class="flex flex-col gap-6">
+        <h2 class="flex items-center md:flex-row flex-col">Our Services</h2>
+        <div class="services">
+          <div class="service bg-primary flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Fulfillment</h3>
+            <a
+              href="/fulfillment"
+              class="bg-black text-white w-36 self-center hover:bg-gray-800 h-8 justify-center flex items-center"
+              >See Our Plans</a
             >
-            if you're looking for digital distribution :)
-          </p>
-        </div>
-      </div>
-    </Section>
+            <p>
+              We offer fulfillment to labels that are looking to offload their
+              inventory, utilizing warehouses in both the US and the EU.
+            </p>
+          </div>
+          <div class="service bg-secondary flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Vinyl & Cassette Pressing</h3>
+            <p>
+              Want to hear your music on a physical format? We will press your
+              record onto vinyl or cassette with many options for customization.
+            </p>
+          </div>
 
-    <Section id="artists">
-      <h2>Our Artists</h2>
-      <div class="artists">
-        <a
-          href="https://www.electronicvisionsmusic.com/"
-          target="_blank"
-          class="shrink-0"
-        >
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-full"
-              alt="fl"
-              src={ev}
-            />
-            <span class="text-2xl">Electronic Visions</span>
+          <div class="service bg-tertiary flex flex-col gap-2">
+            <h3 class="text-xl font-bold">Digital Distribution</h3>
+            <p>
+              We recommend <a
+                href="https://www.and.fm"
+                target="_blank"
+                class="underline font-bold text-blue-900">and.fm</a
+              >
+              if you're looking for digital distribution :)
+            </p>
           </div>
-        </a>
-        <a href="https://davz.com/" target="_blank" class="shrink-0">
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-full"
-              alt="fl"
-              src={davz}
-            />
-            <span class="text-2xl">DavZ</span>
-          </div>
-        </a>
-        <a href="https://demin.bandcamp.com/" target="_blank" class="shrink-0">
-          <div class="flex flex-col gap-4 items-center">
-            <Image
-              width="400"
-              height="400"
-              class="w-56 h-56 rounded-full"
-              alt="fl"
-              src={demin}
-            />
-            <span class="text-2xl">demin</span>
-          </div>
-        </a>
-      </div>
-    </Section>
+        </div>
+      </Section>
+
+      <Section id="artists" class="flex flex-col gap-6">
+        <h2 class="flex items-center md:flex-row flex-col">Our Artists</h2>
+        <div class="artists">
+          <a href="https://www.electronicvisionsmusic.com/" target="_blank">
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-artist"
+                alt="fl"
+                src={ev}
+              />
+              <span class="text-lg md:text-2xl">Electronic Visions</span>
+            </div>
+          </a>
+          <a href="https://davz.com/" target="_blank">
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-artist"
+                alt="fl"
+                src={davz}
+              />
+              <span class="text-lg md:text-2xl">DavZ</span>
+            </div>
+          </a>
+          <a href="https://demin.bandcamp.com/" target="_blank">
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-artist"
+                alt="fl"
+                src={demin}
+              />
+              <span class="text-lg md:text-2xl">demin</span>
+            </div>
+          </a>
+          <a href="https://linktr.ee/clydeshelton" target="_blank">
+            <div class="flex flex-col gap-4 items-center">
+              <Image
+                width="400"
+                height="400"
+                class="label-artist"
+                alt="fl"
+                src={clydeShelton}
+              />
+              <span class="text-lg md:text-2xl">Clyde Shelton</span>
+            </div>
+          </a>
+        </div>
+      </Section>
+    </div>
   </Main>
 </MainLayout>

@@ -4,8 +4,6 @@ const { id: idName, class: className = "" } = Astro.props;
 
 <style>
   .section {
-    padding: 2rem 2rem 5rem 2rem;
-    margin: 2rem 0;
     border: 7px solid var(--text);
     border-radius: 40px;
   }
@@ -25,6 +23,6 @@ const { id: idName, class: className = "" } = Astro.props;
   }
 </style>
 
-<section id={idName} class:list={["section", className]}>
+<section id={idName} class:list={["section", "p-2 py-8 md:p-8", className]}>
   <slot />
 </section>
