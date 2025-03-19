@@ -19,7 +19,14 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="flex items-center gap-8 justify-center py-8 mb-8">
       <div class="flex flex-col border-4 w-[24rem]">
         <div class="flex flex-col gap-8 p-8">
-          <h2 class="text-2xl font-bold self-center">Physical Fulfillment</h2>
+          <div class="flex flex-col gap-2">
+            <h2 class="text-2xl font-bold self-center">Physical Fulfillment</h2>
+            <p class="text-sm text-gray-300 text-center">
+              We centralize and simplify your shipping & logistics, utilizing
+              our US and EU based warehouses, we provide you a seamless
+              experience and a dashboard to manage your orders.
+            </p>
+          </div>
           <h3
             class="text-2xl font-bold bg-tertiary p-2 text-black flex justify-center w-1/2 self-center"
           >
@@ -30,16 +37,22 @@ import MainLayout from "../layouts/MainLayout.astro";
         <div class="p-8 bg-lighterbg">
           <ul class="flex flex-col gap-2">
             <li class="flex gap-2 items-center">
-              <CircleCheck /> Fulfillment of Vinyl, Cassette
+              <CircleCheck /> Fulfillment of Vinyl and Cassette
             </li>
             <li class="flex gap-2 items-center">
-              <CircleCheck /> Integration with Bandcamp
+              <CircleCheck /> Integration with Bandcamp orders
             </li>
             <li class="flex gap-2 items-center">
               <CircleCheck /> Support response within 24h
             </li>
             <li class="flex gap-2 items-center">
-              <CircleCheck /> No unreasonable limits on orders*
+              <CircleCheck /> Unlimited orders*
+            </li>
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> Shipping materials included
+            </li>
+            <li class="flex gap-2 items-center">
+              <CircleCheck /> Custom kitting
             </li>
             <li class="flex gap-2 items-center">
               <CircleCheck /> Cheaper shipping for global customers
